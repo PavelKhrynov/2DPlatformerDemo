@@ -72,5 +72,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Spicial exceptions
-/Assets/Sunnyland/*
-/Assets/Sunnyland.meta
+/[Aa]ssets/Sunnyland.meta
+/[Aa]ssets/Sunnyland/*
