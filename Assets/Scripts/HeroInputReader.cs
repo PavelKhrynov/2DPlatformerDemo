@@ -3,27 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class HeroInputReader : MonoBehaviour
+namespace WhereIAm.Scripts
 {
-    [SerializeField] private Hero _hero;
-
-    private HeroInput _inputAction;
-
-    private void Awake()
+    public class HeroInputReader : MonoBehaviour
     {
-        _inputAction = new HeroInput();
-        _inputAction.Hero.HorizontalMovement.performed += OnHorizontalMovement;
-        _inputAction.Hero.HorizontalMovement.canceled += OnHorizontalMovement;
-    }
+        [SerializeField] private Hero _hero;
 
-    private void OnEnable()
-    {
-        _inputAction.Enable();
-    }
+        private HeroInput _inputAction;
 
-    public void OnHorizontalMovement(InputAction.CallbackContext context)
-    {
-        var _direction = context.ReadValue<Vector2>();
-        _hero?.SetDirection(_direction);
+        private void Awake()
+        {
+            _inputAction = new HeroInput();
+            _inputAction.Hero.HorizontalMovement.performed += OnHorizontalMovement;
+            _inputAction.Hero.HorizontalMovement.canceled += OnHorizontalMovement;
+        }
+
+        private void OnEnable()
+        {
+            _inputAction.Enable();
+        }
+
+        public void OnHorizontalMovement(InputAction.CallbackContext context)
+        {
+            var _direction = context.ReadValue<Vector2>();
+            _hero?.SetDirection(_direction);
+        }
     }
 }
