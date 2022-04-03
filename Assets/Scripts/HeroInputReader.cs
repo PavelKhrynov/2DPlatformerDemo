@@ -23,7 +23,7 @@ public class HeroInputReader : MonoBehaviour
 
     public void OnHorizontalMovement(InputAction.CallbackContext context)
     {
-        var _direction = context.ReadValue<float>();
+        var _direction = context.ReadValue<Vector2>();
         _hero?.SetDirection(_direction);
     }
 }
