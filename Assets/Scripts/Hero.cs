@@ -8,6 +8,7 @@ namespace WhereIAm.Scripts
     {
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
+        [SerializeField] private float _damageJumpSpeed;
 
         [SerializeField] private LayerCheck _groundCheck;
 
@@ -16,9 +17,13 @@ namespace WhereIAm.Scripts
         private Animator _animator;
         private SpriteRenderer _sprite;
 
+        private bool _isGrounded;
+        private bool _allowDoubleJump;
+
         private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
         private static readonly int IsRunningKey = Animator.StringToHash("is-running");
         private static readonly int VerticalVelocityKey = Animator.StringToHash("vertical-velocity");
+        private static readonly int Hit = Animator.StringToHash("hit");
 
         private void Awake()
         {
@@ -27,35 +32,70 @@ namespace WhereIAm.Scripts
             _sprite = GetComponent<SpriteRenderer>();
         }
 
+        private void Update()
+        {
+            _isGrounded = IsGrounded();
+        }
+
+        private void FixedUpdate()
+        {
+            var xVelocity = _direction.x * _speed;
+            var yVelocity = CalculateYVelocity();
+
+            _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
+
+            _animator.SetFloat(VerticalVelocityKey, _rigidbody.velocity.y);
+            _animator.SetBool(IsRunningKey, _direction.x != 0);
+            _animator.SetBool(IsGroundKey, _isGrounded);
+
+            UpdateSpriteDirection();
+        }
+
         public void SetDirection(Vector2 direction)
         {
             _direction = direction;
         }
 
-        private void FixedUpdate()
+        public void TakeDamage()
         {
-            _rigidbody.velocity = new Vector2(_direction.x * _speed, _rigidbody.velocity.y);
+            _animator.SetTrigger(Hit);
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
+        }
 
-            var isJumping = _direction.y > 0;
-            var isGrounded = IsGrounded();
+        private float CalculateYVelocity()
+        {
+            var yVelocity = _rigidbody.velocity.y;
+            var isJumpPressing= _direction.y > 0;
 
-            if (isJumping)
+            if (_isGrounded) _allowDoubleJump = true;
+            if (isJumpPressing)
             {
-                if (isGrounded)
-                {
-                    _rigidbody.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
-                }
+                yVelocity = CalculateJumpVelocity(yVelocity);
             }
             else if (_rigidbody.velocity.y > 0)
             {
-                _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y * 0.5f);
+                yVelocity *= 0.5f;
             }
 
-            _animator.SetFloat(VerticalVelocityKey, _rigidbody.velocity.y);
-            _animator.SetBool(IsRunningKey, _direction.x != 0);
-            _animator.SetBool(IsGroundKey, isGrounded);
+            return yVelocity;
+        }
 
-            UpdateSpriteDirection();
+        private float CalculateJumpVelocity(float yVelocity)
+        {
+            var isFalling = _rigidbody.velocity.y <= 0.001f;
+            if (!isFalling) return yVelocity;
+
+            if (_isGrounded)
+            {
+                yVelocity += _jumpSpeed;
+            }
+            else if (_allowDoubleJump)
+            {
+                yVelocity = _jumpSpeed;
+                _allowDoubleJump = false;
+            }
+
+            return yVelocity;
         }
 
         private void UpdateSpriteDirection()
