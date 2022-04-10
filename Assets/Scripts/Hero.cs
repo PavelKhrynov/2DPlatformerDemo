@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using WhereIAm.Scripts.Component;
 
 namespace WhereIAm.Scripts
 {
@@ -9,13 +10,16 @@ namespace WhereIAm.Scripts
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpSpeed;
         [SerializeField] private float _damageJumpSpeed;
+        [SerializeField] private float _interactionRadius;
 
         [SerializeField] private LayerCheck _groundCheck;
+        [SerializeField] private LayerMask _interactionLayer;
 
         private Rigidbody2D _rigidbody;
         private Vector2 _direction;
         private Animator _animator;
         private SpriteRenderer _sprite;
+        private Collider2D[] _intractionResult = new Collider2D[1];
 
         private bool _isGrounded;
         private bool _allowDoubleJump;
@@ -49,6 +53,20 @@ namespace WhereIAm.Scripts
             _animator.SetBool(IsGroundKey, _isGrounded);
 
             UpdateSpriteDirection();
+        }
+
+        public void Interact()
+        {
+            var quantity = Physics2D.OverlapCircleNonAlloc(transform.position, _interactionRadius, _intractionResult, _interactionLayer);
+
+            for (int i = 0; i < quantity; i++)
+            {
+                var component = _intractionResult[i].GetComponent<InteractableComponent>();
+                if (component != null)
+                {
+                    component.Interact();
+                }
+            }
         }
 
         public void SetDirection(Vector2 direction)

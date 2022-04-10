@@ -223,8 +223,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   _jumpSpeed: 10
-  _damageJumpSpeed: 10
+  _damageJumpSpeed: 50
+  _interactionRadius: 1
   _groundCheck: {fileID: 2550311189414732790}
+  _interactionLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &2550311190415046174
 MonoBehaviour:
   m_ObjectHideFlags: 0
