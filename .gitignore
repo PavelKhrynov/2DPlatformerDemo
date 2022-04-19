@@ -74,3 +74,6 @@ crashlytics-build.properties
 # Spicial exceptions
 /[Aa]ssets/Sunnyland.meta
 /[Aa]ssets/Sunnyland/*
+
+# IDE
+/.vscode
