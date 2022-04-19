@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7990400467116045219}
   - component: {fileID: 7650048464926962915}
   - component: {fileID: 5306719488462317992}
+  - component: {fileID: 2061667302}
   m_Layer: 0
   m_Name: DoorBlockBig
   m_TagString: Untagged
@@ -109,3 +110,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &2061667302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5948940679604380545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148df64cad15ea2469a5d359fe0cc81c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _isLoop: 0
+  _moveSpeed: 1

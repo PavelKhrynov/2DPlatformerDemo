@@ -45,7 +45,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.61}
+  m_Offset: {x: -0.03, y: -0.67}
   serializedVersion: 2
   m_Radius: 0.4
 --- !u!114 &2550311189414732790
@@ -183,11 +183,11 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 2550311190415046171}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b9a30db076c4c1748b405f6bb09279e5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05, y: -0.25}
+  m_Offset: {x: -0.05, y: -0.28}
   m_Size: {x: 0.94, y: 1.43}
   m_Direction: 0
 --- !u!95 &2550311190415046162
