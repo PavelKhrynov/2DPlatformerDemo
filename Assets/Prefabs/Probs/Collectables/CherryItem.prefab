@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2271199344087237759}
   - component: {fileID: 2271199344087237755}
   - component: {fileID: 2271199344087237754}
+  - component: {fileID: 1265522089353132110}
+  - component: {fileID: 4816050465981104281}
   m_Layer: 0
   m_Name: CherryItem
   m_TagString: Untagged
@@ -72,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1856164991
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bdce2a9cb3d0242958c2593a3b8d8742, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -118,11 +120,38 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2271199344087237755}
-        m_TargetAssemblyTypeName: WhereIAm.Scripts.Component.DestroyObjectComponent,
+      - m_Target: {fileID: 2271199344087237754}
+        m_TargetAssemblyTypeName: WhereIAm.Scripts.Animations.SpriteAnimation, Assembly-CSharp
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Destroy
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2271199344087237758}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _actionWithObject:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4816050465981104281}
+        m_TargetAssemblyTypeName: WhereIAm.Scripts.Component.CollectableComponent,
           Assembly-CSharp
-        m_MethodName: DestroyObject
-        m_Mode: 1
+        m_MethodName: Collect
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -172,6 +201,56 @@ MonoBehaviour:
     OnComplete:
       m_PersistentCalls:
         m_Calls: []
+  - Name: Destroy
+    IsLoop: 0
+    IsPlayNext: 0
+    Sprites:
+    - {fileID: 21300000, guid: 1a4497d8531b845f185bb7742441138d, type: 3}
+    - {fileID: 21300000, guid: d01b0b4f13e044d0c83c424e542ddcbf, type: 3}
+    - {fileID: 21300000, guid: 857b27bf305c140dab35e3de694fcfbc, type: 3}
+    - {fileID: 21300000, guid: d1c3b6a233b524474899f14a81d5c3b5, type: 3}
+    OnComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2271199344087237755}
+          m_TargetAssemblyTypeName: WhereIAm.Scripts.Component.DestroyObjectComponent,
+            Assembly-CSharp
+          m_MethodName: DestroyObject
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   _onComplete:
     m_PersistentCalls:
       m_Calls: []
+  _dontPlayOnStart: 0
+--- !u!114 &1265522089353132110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271199344087237756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fb528c3a25bd9749bdada42645ae700, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 5
+--- !u!114 &4816050465981104281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271199344087237756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3447627a55df8d4e9126180c5b912ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

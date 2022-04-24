@@ -7,7 +7,7 @@ namespace WhereIAm.Scripts.Component
     public class MoveByPointListComponent : MonoBehaviour
     {
         [SerializeField] private GameObject[] _targetList;
-        [SerializeField] private bool _isBeginOnStart = false;
+        [SerializeField] private bool _isRunOnStart = false;
         [SerializeField] private bool _isLoop = false;
         [SerializeField] private float _moveSpeed = 1f;
         //[SerializeField] private bool _isTurnBack = false; // TODO: implement it later
@@ -19,7 +19,7 @@ namespace WhereIAm.Scripts.Component
 
         private void Start()
         {
-            if (_isBeginOnStart)
+            if (_isRunOnStart)
             {
                 StartMove();
             }

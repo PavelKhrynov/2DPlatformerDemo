@@ -9,12 +9,14 @@ namespace WhereIAm.Scripts.Component
     {
         [SerializeField] private string _tag;
         [SerializeField] private UnityEvent _action;
+        [SerializeField] private UnityEvent<GameObject> _actionWithObject;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag(_tag))
             {
                 _action?.Invoke();
+                _actionWithObject?.Invoke(collision.gameObject);
             }
         }
     }

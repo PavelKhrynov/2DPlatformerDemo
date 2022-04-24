@@ -8,9 +8,10 @@ namespace WhereIAm.Scripts.Animations
     [RequireComponent(typeof(SpriteRenderer))]
     public class SpriteAnimation : MonoBehaviour
     {
-        [SerializeField] private int _frameRate;
+        [SerializeField] private int _frameRate = 8;
         [SerializeField] private AnimationState[] _stateList;
         [SerializeField] private UnityEvent _onComplete;
+        [SerializeField] private bool _dontPlayOnStart = false;
 
         private SpriteRenderer _renderer;
         private float _secondsPerFrame;
@@ -64,7 +65,7 @@ namespace WhereIAm.Scripts.Animations
             _nextFrameTime = Time.time + _secondsPerFrame;
             _currentStateIndex = 0;
 
-            if (_stateList != null && _stateList.Length > 0)
+            if (_stateList != null && _stateList.Length > 0 && !_dontPlayOnStart)
             {
                 SetState(_stateList[_currentStateIndex]);
             }
@@ -73,7 +74,6 @@ namespace WhereIAm.Scripts.Animations
         private void Update()
         {
             if (!_isPlaying || _nextFrameTime > Time.time) return;
-
 
             if (_currentSpriteIndex >= _sprites.Length)
             {
