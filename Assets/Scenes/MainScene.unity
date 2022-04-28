@@ -8793,6 +8793,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 263651617313565335, guid: aa651d8e9d620e94088fb06acad6b1d6, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa651d8e9d620e94088fb06acad6b1d6, type: 3}
 --- !u!1001 &2271199343672165045
@@ -8860,6 +8864,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 978299325, guid: 732e84a1099c95d4e9e31018e69e1411, type: 3}
+      propertyPath: _health
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 978299325, guid: 732e84a1099c95d4e9e31018e69e1411, type: 3}
       propertyPath: _onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 227551254}
@@ -8910,6 +8918,10 @@ PrefabInstance:
     - target: {fileID: 2550311190415046171, guid: 732e84a1099c95d4e9e31018e69e1411, type: 3}
       propertyPath: m_Name
       value: Hero
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550311190415046175, guid: 732e84a1099c95d4e9e31018e69e1411, type: 3}
+      propertyPath: _damageJumpSpeed
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 732e84a1099c95d4e9e31018e69e1411, type: 3}
