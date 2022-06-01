@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Creatures.Hero;
+using System.Collections;
 using UnityEngine;
 
-namespace WhereIAm.Scripts.Component
+namespace Assets.Scripts.Component
 {
     public class CollectableComponent : MonoBehaviour
     {

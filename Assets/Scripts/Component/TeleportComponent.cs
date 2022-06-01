@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace WhereIAm.Scripts.Component
+namespace Assets.Scripts.Component
 {
     public class TeleportComponent : MonoBehaviour
     {

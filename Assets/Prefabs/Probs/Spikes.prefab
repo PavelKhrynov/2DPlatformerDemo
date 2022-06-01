@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 263651617313565333}
   - component: {fileID: 263651617313565334}
   - component: {fileID: 263651617313565332}
-  - component: {fileID: 263651617313565323}
-  - component: {fileID: 263651617313565322}
+  - component: {fileID: 6792792089572688889}
+  - component: {fileID: 3910973007299450025}
   m_Layer: 8
   m_Name: Spikes
   m_TagString: Untagged
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1856164991
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0049772a1acaf4a49b69bb504ffe2669, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -111,7 +111,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9375, y: 0.625}
   m_EdgeRadius: 0
---- !u!114 &263651617313565323
+--- !u!114 &6792792089572688889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,15 +120,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 263651617313565335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b9babfef8761b42bf57b4193322fb4, type: 3}
+  m_Script: {fileID: 11500000, guid: 6aea4edba53bc1a4abf14e6a687eb629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hpDelta: -1
+--- !u!114 &3910973007299450025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263651617313565335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d09210b2145b71478181891ea12fd28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 263651617313565322}
-        m_TargetAssemblyTypeName: WhereIAm.Scripts.Component.DamageComponent, Assembly-CSharp
+      - m_Target: {fileID: 6792792089572688889}
+        m_TargetAssemblyTypeName: Assets.Scripts.Component.Health.ModifyHealthComponent,
+          Assembly-CSharp
         m_MethodName: ApplyDamage
         m_Mode: 0
         m_Arguments:
@@ -139,16 +153,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &263651617313565322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263651617313565335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c565eadac34c4244af73a7d805d8ed5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hpDelta: -1

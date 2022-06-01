@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - Ground
   - Interactables
-  - 
-  - 
+  - Trash
+  - Hero
   - 
   - 
   - 
@@ -38,18 +39,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Background
     uniqueID: 2324930039
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Level
     uniqueID: 2438802305
     locked: 0
-  - name: Hero
-    uniqueID: 265793623
-    locked: 0
   - name: Creatures
     uniqueID: 198440957
+    locked: 0
+  - name: Hero
+    uniqueID: 265793623
     locked: 0

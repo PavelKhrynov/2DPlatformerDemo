@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace WhereIAm.Scripts.Utils
+namespace Assets.Scripts.Utils
 {
     public static class GameObjectExtensions
     {

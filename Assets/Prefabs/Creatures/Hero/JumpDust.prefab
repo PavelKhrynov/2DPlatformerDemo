@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1848712115601079330}
   - component: {fileID: 4722211681758586138}
   - component: {fileID: 7867880982229509806}
-  - component: {fileID: 3466824182772053112}
+  - component: {fileID: 5057009246606940189}
   m_Layer: 0
   m_Name: JumpDust
   m_TagString: Untagged
@@ -111,8 +111,8 @@ MonoBehaviour:
     OnComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3466824182772053112}
-          m_TargetAssemblyTypeName: WhereIAm.Scripts.Component.DestroyObjectComponent,
+        - m_Target: {fileID: 5057009246606940189}
+          m_TargetAssemblyTypeName: Assets.Scripts.Component.GoBased.DestroyObjectComponent,
             Assembly-CSharp
           m_MethodName: DestroyObject
           m_Mode: 1
@@ -128,7 +128,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _dontPlayOnStart: 0
---- !u!114 &3466824182772053112
+--- !u!114 &5057009246606940189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4720208063218314301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdbf816d4a8b8804db061e705c51bfc1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d51d449f843dc040a29140d70a7be7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 4720208063218314301}

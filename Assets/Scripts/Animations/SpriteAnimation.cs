@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace WhereIAm.Scripts.Animations
+namespace Assets.Scripts.Animations
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class SpriteAnimation : MonoBehaviour
@@ -101,16 +101,6 @@ namespace WhereIAm.Scripts.Animations
                 _nextFrameTime += _secondsPerFrame;
                 _currentSpriteIndex++;
             }
-        }
-
-        private void OnBecameVisible()
-        {
-            enabled = true;
-        }
-
-        private void OnBecameInvisible()
-        {
-            enabled = false;
         }
     }
 }

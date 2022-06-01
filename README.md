@@ -1,4 +1,11 @@
 # WhereAmI
- My experimental game project
+My experimental game project
 
-All assets are from Unity Asset Store and all of them are free
+Used instruments:
+- Unity
+- Visual Studio Community 2022
+- Piskel (https://www.piskelapp.com)
+
+All assets are from free sources:
+Sunny Land (https://assetstore.unity.com/packages/2d/characters/sunny-land-103349)
+Orbs (https://opengameart.org/node/78832)

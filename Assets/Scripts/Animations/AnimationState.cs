@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace WhereIAm.Scripts.Animations
+namespace Assets.Scripts.Animations
 {
     [Serializable]
     public class AnimationState

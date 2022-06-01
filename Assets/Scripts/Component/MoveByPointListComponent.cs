@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
-namespace WhereIAm.Scripts.Component
+namespace Assets.Scripts.Component
 {
     public class MoveByPointListComponent : MonoBehaviour
     {
-        [SerializeField] private GameObject[] _targetList;
+        [SerializeField] private Transform[] _targetList;
         [SerializeField] private bool _isRunOnStart = false;
         [SerializeField] private bool _isLoop = false;
         [SerializeField] private float _moveSpeed = 1f;
@@ -30,7 +30,7 @@ namespace WhereIAm.Scripts.Component
             if (_isMoving && _nextPosition != null)
             {
                 transform.position = Vector2.MoveTowards(transform.position, _nextPosition, _moveSpeed * Time.deltaTime);
-                 
+
                 if (Mathf.Abs(transform.position.magnitude - _nextPosition.magnitude) <= 0.001f)
                 {
                     MoveToNextPosition();
@@ -42,7 +42,7 @@ namespace WhereIAm.Scripts.Component
         {
             if (_nextPosition == Vector2.zero)
             {
-                _nextPosition = _targetList[_currentPositionIndex].transform.position;
+                _nextPosition = _targetList[_currentPositionIndex].position;
             }
 
             _isMoving = true;
@@ -71,7 +71,7 @@ namespace WhereIAm.Scripts.Component
             if (_isMoving)
             {
                 _currentPositionIndex++;
-                _nextPosition = _targetList[_currentPositionIndex].transform.position;
+                _nextPosition = _targetList[_currentPositionIndex].position;
             }
         }
     }
