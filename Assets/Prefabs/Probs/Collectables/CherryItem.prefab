@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4816050465981104281}
   - component: {fileID: 9197920663847460872}
   - component: {fileID: 6849825804877925789}
+  - component: {fileID: -1060994966372491601}
   m_Layer: 0
   m_Name: CherryItem
   m_TagString: Untagged
@@ -143,9 +144,9 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 9197920663847460872}
-          m_TargetAssemblyTypeName: WhereIAm.Scripts.Component.DestroyObjectComponent,
+          m_TargetAssemblyTypeName: Assets.Scripts.Component.GoBased.DestroyObjectComponent,
             Assembly-CSharp
-          m_MethodName: 
+          m_MethodName: DestroyObject
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -197,3 +198,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _score: 1
+--- !u!114 &-1060994966372491601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271199344087237756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e73c23ce78cb274c920dc8dbd150cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 2048
+  _actionWithObject:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4816050465981104281}
+        m_TargetAssemblyTypeName: Assets.Scripts.Component.CollectableComponent,
+          Assembly-CSharp
+        m_MethodName: Collect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2271199344087237758}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2271199344087237754}
+        m_TargetAssemblyTypeName: Assets.Scripts.Animations.SpriteAnimation, Assembly-CSharp
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Destroy
+          m_BoolArgument: 0
+        m_CallState: 2

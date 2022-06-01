@@ -273,9 +273,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _invertScale: 0
-  _speed: 1
-  _jumpSpeed: 1
-  _damageVelocity: 10
+  _speed: 4
+  _jumpSpeed: 10
+  _damageVelocity: 20
   _damage: 1
   _slopeCheckDistance: 0.5
   _groundLayer:
@@ -283,11 +283,11 @@ MonoBehaviour:
     m_Bits: 256
   _groundCheck: {fileID: 397590357860422315}
   _attackRange: {fileID: 2325809836994528027}
-  _particles: {fileID: 0}
+  _particles: {fileID: 3903607141209288662}
   noFriction: {fileID: 6200000, guid: b9a30db076c4c1748b405f6bb09279e5, type: 2}
   fullFriction: {fileID: 6200000, guid: 9c90fb347118b9a43a051296dbe525e7, type: 2}
   _interactionRadius: 1
-  _fallVelocity: 0
+  _fallVelocity: 10
   _interactionLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -324,6 +324,8 @@ MonoBehaviour:
     Component: {fileID: 4390655578615624187}
   - Id: Jump
     Component: {fileID: 29787068390865090}
+  - Id: Run
+    Component: {fileID: 2197078162070726485}
 --- !u!114 &2786277249141042742
 MonoBehaviour:
   m_ObjectHideFlags: 0

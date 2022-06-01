@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 2550311190415046162}
   - component: {fileID: 4574458084064337206}
   - component: {fileID: 4693280891906945176}
+  - component: {fileID: 2401874866896116788}
   - component: {fileID: 8616386610549840613}
   m_Layer: 0
   m_Name: Snail
@@ -270,17 +271,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _invertScale: 1
-  _speed: 1
+  _speed: 2
   _jumpSpeed: 0
   _damageVelocity: 0
-  _damage: 0
+  _damage: 1
   _slopeCheckDistance: 0.5
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256
   _groundCheck: {fileID: 1848950847035625241}
   _attackRange: {fileID: 2710524067959438306}
-  _particles: {fileID: 0}
+  _particles: {fileID: 2401874866896116788}
   noFriction: {fileID: 6200000, guid: b9a30db076c4c1748b405f6bb09279e5, type: 2}
   fullFriction: {fileID: 6200000, guid: 9c90fb347118b9a43a051296dbe525e7, type: 2}
 --- !u!114 &4693280891906945176
@@ -295,11 +296,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d4465e0d9fae6c49af590500e4edb93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vision: {fileID: 0}
+  _vision: {fileID: 1550218946111603666}
   _canAttack: {fileID: 8946072034072119454}
   _alarmDelay: 0.5
   _attackCooldown: 1
   _missHeroCooldown: 0.5
+--- !u!114 &2401874866896116788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2550311190415046171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d40a3ab10a02e499c646dabdd1fb0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawners:
+  - Id: Run
+    Component: {fileID: 2819507603770251081}
 --- !u!114 &8616386610549840613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,7 +514,8 @@ MonoBehaviour:
   _mask:
     serializedVersion: 2
     m_Bits: 2048
-  _tags: []
+  _tags:
+  - Player
   _onOverlapEvent:
     m_PersistentCalls:
       m_Calls:

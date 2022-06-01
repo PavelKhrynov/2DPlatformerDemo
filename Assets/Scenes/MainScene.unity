@@ -197,7 +197,7 @@ MonoBehaviour:
   _tag: Player
   _layer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   _actionWithObject:
     m_PersistentCalls:
       m_Calls:
@@ -2532,19 +2532,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 407415914}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cd363a979873404abb1476323d0f4d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d09210b2145b71478181891ea12fd28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tag: Player
   _action:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 407415918}
         m_TargetAssemblyTypeName: Assets.Scripts.Component.TeleportComponent, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: Teleport
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 407415920}
+        m_TargetAssemblyTypeName: Assets.Scripts.Animations.SpriteAnimation, Assembly-CSharp
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Close
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 407415915}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2623,7 +2648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d51d449f843dc040a29140d70a7be7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 0}
+  _objectToDestroy: {fileID: 407415914}
 --- !u!1001 &450212473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3773,7 +3798,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146541383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.5, y: 7.035, z: -10}
+  m_LocalPosition: {x: 2, y: 0.034999743, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1317083493}
@@ -4544,7 +4569,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667652487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.5, y: 7.035, z: -10}
+  m_LocalPosition: {x: 2, y: 0.034999743, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4744,9 +4769,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1668362707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b9babfef8761b42bf57b4193322fb4, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d09210b2145b71478181891ea12fd28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tag: Player
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1668362713}
+        m_TargetAssemblyTypeName: Assets.Scripts.Component.GoBased.AttachObjectToComponent,
+          Assembly-CSharp
+        m_MethodName: Attach
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1668362713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4756,7 +4798,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1668362707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acd803a855295334d93ff4d43473eebc, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fe771362fa82054f9a5d62a57a8d972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1668362714
@@ -4775,8 +4817,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Assets.Scripts.Component.AttachObjectToComponent,
+      - m_Target: {fileID: 1668362713}
+        m_TargetAssemblyTypeName: Assets.Scripts.Component.GoBased.AttachObjectToComponent,
           Assembly-CSharp
         m_MethodName: Detach
         m_Mode: 0
@@ -5134,9 +5176,9 @@ GameObject:
   - component: {fileID: 2059364189}
   - component: {fileID: 2059364188}
   - component: {fileID: 2059364191}
-  - component: {fileID: 2059364192}
-  - component: {fileID: 2059364193}
   - component: {fileID: 2059364194}
+  - component: {fileID: 2059364193}
+  - component: {fileID: 2059364192}
   m_Layer: 0
   m_Name: MeleeOrb
   m_TagString: Untagged
@@ -5180,7 +5222,7 @@ MonoBehaviour:
     OnComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2059364194}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: WhereIAm.Scripts.Component.DestroyObjectComponent,
             Assembly-CSharp
           m_MethodName: DestroyObject
@@ -5256,7 +5298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059364187}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.25, y: -0.25, z: 0}
+  m_LocalPosition: {x: 2, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5287,9 +5329,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2059364187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4e5bd8f1c9a9ff4bb9761a173e2dda6, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d51d449f843dc040a29140d70a7be7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 2059364187}
 --- !u!114 &2059364193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5311,9 +5354,53 @@ MonoBehaviour:
   m_GameObject: {fileID: 2059364187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdbf816d4a8b8804db061e705c51bfc1, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e73c23ce78cb274c920dc8dbd150cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 2048
+  _actionWithObject:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2059364193}
+        m_TargetAssemblyTypeName: Assets.Scripts.Component.ArmHeroComponent, Assembly-CSharp
+        m_MethodName: ArmHero
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2059364191}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2059364192}
+        m_TargetAssemblyTypeName: Assets.Scripts.Component.GoBased.DestroyObjectComponent,
+          Assembly-CSharp
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2061667302 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2061667302, guid: 3382ef6da767eb749a1346352ed4b65f, type: 3}
@@ -10270,11 +10357,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2550311190415046169, guid: 732e84a1099c95d4e9e31018e69e1411, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2550311190415046169, guid: 732e84a1099c95d4e9e31018e69e1411, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.035
+      value: 0.034999847
       objectReference: {fileID: 0}
     - target: {fileID: 2550311190415046169, guid: 732e84a1099c95d4e9e31018e69e1411, type: 3}
       propertyPath: m_LocalPosition.z
