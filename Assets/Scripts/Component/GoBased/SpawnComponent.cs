@@ -9,6 +9,7 @@ namespace Assets.Scripts.Component.GoBased
         [SerializeField] private GameObject _prefab;
         [SerializeField] private bool _invertXScale;
 
+        [ContextMenu("Spawn")]
         public void Spawn()
         {
             var instance = Instantiate(_prefab, _target.position, Quaternion.identity);

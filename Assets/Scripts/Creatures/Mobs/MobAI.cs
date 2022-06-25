@@ -5,7 +5,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Creatures
+namespace Assets.Scripts.Creatures.Mobs
 {
     public class MobAI : MonoBehaviour
     {

@@ -6,6 +6,7 @@ using Assets.Scripts.Utils;
 using Assets.Scripts.Model;
 using Assets.Scripts.Component.Health;
 using Assets.Scripts.Component.ColliderBased;
+using Assets.Scripts.Model.Definitions;
 
 namespace Assets.Scripts.Creatures.Hero
 {
@@ -25,15 +26,23 @@ namespace Assets.Scripts.Creatures.Hero
         private bool _isSpawnSlamDownDust;
 
         private GameSession _gameSession;
+        private int SwordCount => _gameSession.Data.Inventory.Count("Sword");
+        private int CoinCount => _gameSession.Data.Inventory.Count("Coin");
 
         #region Unity Functions
         private void Start()
         {
             _gameSession = FindObjectOfType<GameSession>();
 
+            _gameSession.Data.Inventory.OnChanged += OnInventoryChanged;
+
             var health = GetComponent<HealthComponent>();
             health.SetHealth(_gameSession.Data.Hp);
             UpdateHeroWeapon();
+        }
+        private void OnDestroy()
+        {
+            _gameSession.Data.Inventory.OnChanged -= OnInventoryChanged;
         }
 
         protected override void FixedUpdate()
@@ -60,9 +69,16 @@ namespace Assets.Scripts.Creatures.Hero
         }
         #endregion
 
+        private void OnInventoryChanged(string id, int value)
+        {
+            if (id == "Sword")
+            {
+                UpdateHeroWeapon();
+            }
+        }
         private void UpdateHeroWeapon()
         {
-            _animator.runtimeAnimatorController = _gameSession.Data.IsArmed ? _armed : _unarmed;
+            _animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _unarmed;
         }
 
         protected override float CalculateYVelocity()
@@ -86,7 +102,7 @@ namespace Assets.Scripts.Creatures.Hero
         }
         public override void Attack()
         {
-            if (!_gameSession.Data.IsArmed) return;
+            if (SwordCount <= 0) return;
 
             base.Attack();
         }
@@ -100,11 +116,10 @@ namespace Assets.Scripts.Creatures.Hero
             {
                 if (collectable is ScoreCollectable)
                 {
-                    _gameSession.Data.Coins += (collectable as ScoreCollectable).Score;
+                    var score = (collectable as ScoreCollectable).Score;
+                    _gameSession.Data.Inventory.Add("Coin", score);
                 }
             }
-
-            Debug.Log($"Score: {_gameSession.Data.Coins}");
         }
         public void Interact()
         {
@@ -112,7 +127,7 @@ namespace Assets.Scripts.Creatures.Hero
         }
         public void ArmHero()
         {
-            _gameSession.Data.IsArmed = true;
+            _gameSession.Data.Inventory.Add("Sword", 1);
             UpdateHeroWeapon();
         }
         public void OnHealthChanged(int currentHealth)

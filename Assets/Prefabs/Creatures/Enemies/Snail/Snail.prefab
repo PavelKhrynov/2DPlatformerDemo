@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 2550311190415046172}
   - component: {fileID: 2550311190415046162}
   - component: {fileID: 4574458084064337206}
-  - component: {fileID: 4693280891906945176}
+  - component: {fileID: 2026756040557851882}
   - component: {fileID: 2401874866896116788}
   - component: {fileID: 8616386610549840613}
   - component: {fileID: 894231239361889006}
@@ -285,7 +285,7 @@ MonoBehaviour:
   _particles: {fileID: 2401874866896116788}
   noFriction: {fileID: 6200000, guid: b9a30db076c4c1748b405f6bb09279e5, type: 2}
   fullFriction: {fileID: 6200000, guid: 9c90fb347118b9a43a051296dbe525e7, type: 2}
---- !u!114 &4693280891906945176
+--- !u!114 &2026756040557851882
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -329,7 +329,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb988492d52985342962a21fdf4b45df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _points: []
+  _points:
+  - {fileID: 0}
+  - {fileID: 0}
   _threshold: 1
 --- !u!114 &894231239361889006
 MonoBehaviour:
@@ -364,7 +366,19 @@ MonoBehaviour:
       m_Calls: []
   _onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2550311190415046162}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: is-dead
+          m_BoolArgument: 0
+        m_CallState: 2
   _onChange:
     m_PersistentCalls:
       m_Calls: []
@@ -461,7 +475,7 @@ MonoBehaviour:
   _actionWithObject:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4693280891906945176}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Assets.Scripts.Creatures.MobAI, Assembly-CSharp
         m_MethodName: OnHeroInVision
         m_Mode: 0
