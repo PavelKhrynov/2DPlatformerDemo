@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Component.ColliderBased;
+﻿using Assets.Scripts.Component.Audio;
+using Assets.Scripts.Component.ColliderBased;
 using Assets.Scripts.Component.GoBased;
 using System.Collections;
 using UnityEngine;
@@ -29,6 +30,7 @@ namespace Assets.Scripts.Creatures
         protected Rigidbody2D _rigidbody;
         protected Vector2 _direction;
         protected Animator _animator;
+        protected PlaySoundComponent _sounds;
         private CapsuleCollider2D _capsuleCollider;
 
         private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
@@ -53,6 +55,7 @@ namespace Assets.Scripts.Creatures
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _capsuleCollider = GetComponent<CapsuleCollider2D>();
+            _sounds = GetComponent<PlaySoundComponent>();
 
             _colliderSize = _capsuleCollider.size;
         }
